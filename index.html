@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+	<div class="switches">
+        <div class="switch" id="switchFade">
+            <div class="item">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="switch" id="switchLeft">
+            <div class="item">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="switch" id="switchUp">
+            <div class="item">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="switch" id="switchDown">
+            <div class="item">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/switch.js"></script>
+    <script>
+
+        /* var s1 = new Switcher('#switchFade')
+        var s2 = new Switcher('#switchLeft', {
+           effect : 'slide',
+           idx : 1
+        })
+        var s3 = new Switcher('#switchUp', {
+           control : false,
+           effect : 'slideUp',
+           idx : 2
+        })
+        var s4 = new Switcher('#switchDown', {
+            control : false,
+            effect : 'slideDown',
+            idx : 3
+        })*/
+
+        $('#switchFade').switches();
+        $('#switchLeft').switches({
+           effect : 'slide',
+           idx : 1
+        });
+        $('#switchUp').switches({
+           control : false,
+           effect : 'slideUp',
+           idx : 2
+        });
+        $('#switchDown').switches({
+            control : false,
+            effect : 'slideDown',
+            idx : 3
+        });
+         // $('.switch').switches();
+    </script>
+</body>
+</html>

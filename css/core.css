@@ -1,0 +1,213 @@
+* { margin: 0; padding: 0; }
+body { background: url(bgimg/bg-body.png); font: 12px/1.5 Arial; font-size:12px; }
+.switches {
+    overflow: hidden;
+}
+.switch {
+    position: relative;
+    float: left;
+    margin: 60px 0 0 80px;
+    width: 500px;
+    height: 300px;
+}
+.switch-in { position: relative;
+    width: 100%; height:100%; overflow: hidden; }
+.item { float: left; width: 500px; height:300px; overflow: hidden;}
+.item img { display:block; width:500px; height:300px; }
+.non-css3 .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fade > .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 800ms ease-in-out;
+       -moz-transition: opacity 800ms ease-in-out;
+        -ms-transition: opacity 800ms ease-in-out;
+         -o-transition: opacity 800ms ease-in-out;
+            transition: opacity 800ms ease-in-out;
+}
+.fade > .active {
+    opacity: 1;
+    z-index: 10000;
+}
+
+.slide > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: left 800ms cubic-bezier(0.1, 0.5, 0.1, 1);
+       -moz-transition: left 800ms cubic-bezier(0.1, 0.5, 0.1, 1);
+        -ms-transition: left 800ms cubic-bezier(0.1, 0.5, 0.1, 1);
+         -o-transition: left 800ms cubic-bezier(0.1, 0.5, 0.1, 1);
+            transition: left 800ms cubic-bezier(0.1, 0.5, 0.1, 1);
+}
+
+.slide > .active,
+.slide > .next,
+.slide > .prev {
+    display: block;
+}
+.slide > .active {
+    left: 0;
+}
+.slide > .next,
+.slide > .prev {
+    position: absolute;
+    top: 0;
+}
+.slide > .next {
+    left: 100%;
+}
+.slide > .prev {
+    left: -100%;
+}
+.slide > .next.from,
+.slide > .prev.to {
+    left: 0;
+}
+.slide > .active.from {
+    left: -100%;
+}
+.slide > .active.to {
+    left: 100%;
+}
+
+.slide-up > .item,
+.slide-down > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: top 500ms cubic-bezier(0.1, 0.5, 0.1, 1);
+       -moz-transition: top 500ms cubic-bezier(0.1, 0.5, 0.1, 1);
+        -ms-transition: top 500ms cubic-bezier(0.1, 0.5, 0.1, 1);
+         -o-transition: top 500ms cubic-bezier(0.1, 0.5, 0.1, 1);
+            transition: top 500ms cubic-bezier(0.1, 0.5, 0.1, 1);
+}
+
+.slide-up > .active,
+.slide-up > .next,
+.slide-up > .prev {
+    display: block;
+}
+.slide-up > .active {
+    top: 0;
+}
+.slide-up > .next,
+.slide-up > .prev {
+    position: absolute;
+    top: 0;
+}
+.slide-up > .next {
+    top: 100%;
+}
+.slide-up > .prev {
+    top: -100%;
+}
+.slide-up > .next.from,
+.slide-up > .prev.to {
+    top: 0;
+}
+.slide-up > .active.from {
+    top: -100%;
+}
+.slide-up > .active.to {
+    top: 100%;
+}
+
+.slide-down > .active,
+.slide-down > .next,
+.slide-down > .prev {
+    display: block;
+}
+.slide-down > .active {
+    top: 0;
+}
+.slide-down > .next,
+.slide-down > .prev {
+    position: absolute;
+}
+.slide-down > .next {
+    top: -100%;
+}
+.slide-down > .prev {
+    top: 100%;
+}
+.slide-down > .next.from,
+.slide-down > .prev.to {
+    top: 0;
+}
+.slide-down > .active.from {
+    top: 100%;
+}
+.slide-down > .active.to {
+    top: -100%;
+}
+
+.btn {
+    position: absolute;
+    z-index: 10001;
+    top: 50%;
+    margin-top: -20px;
+    height: 30px;
+    width: 30px;
+    font-size: 40px;
+    font-weight: 20;
+    line-height: 22px;
+    background-color: #222222;
+    border-radius: 23px;
+    border: 3px solid #ffffff;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    font-family: Arial;
+    color: #ffffff;
+}
+.btn:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.btn-next {
+    left: auto;
+    right: 5px;
+}
+
+.btn-prev {
+    left: 5px;
+    right: auto;
+}
+
+.pagi-nav {
+    position: absolute;
+    z-index: 10001;
+    right: 5px;
+    bottom: 5px;
+}
+.pagi-nav a {
+    cursor: pointer;
+    float: left;
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    color: #666666;
+    background-color: #ffffff;
+    list-style: none;
+    border-radius: 20px;
+    opacity: .7;
+    filter:alpha(opacity=70);
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    text-decoration: none;
+}
+.pagi-nav .on,
+.pagi-nav a:hover {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #222222;
+    opacity: .8;
+    filter:alpha(opacity=80);
+}
