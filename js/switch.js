@@ -17,13 +17,12 @@
  * })
  */
 + function ($) {
+    "use strict";
     var Switcher = function (element,options) {
         this.elem = $(element);
         this.conf = $.extend({}, this.settings, typeof options == 'object' && options);
         this.initialize();
-        this.elem
-            .on('mouseenter', $.proxy(this.pause,this))
-            .on('mouseleave', $.proxy(this.cycle,this));
+
     }
 
     Switcher.prototype = {
@@ -68,7 +67,13 @@
 
             conf.control && this.control();
             conf.page && this.page();
-            conf.auto && this.cycle();
+
+            if ( conf.auto ) {
+                this.cycle();
+                $this
+                .on('mouseenter', $.proxy(this.pause,this))
+                .on('mouseleave', $.proxy(this.cycle,this));
+            }
 
         },
         cycle : function() {
@@ -141,7 +146,7 @@
                 }
             } else {
                 var from, to, on,
-                    props = {fadeIn : {opacity : 1 }, fadeOut : {opacity : 0 }, active : {left : 0, top : 0 }, left : {left : '-100%'}, right : {left : '100%'}, top : { top : '-100%'}, bottom : { top : '100%'} } 
+                    props = {fadeIn : {opacity : 1 }, fadeOut : {opacity : 0 }, active : {left : 0, top : 0 }, left : {left : '-100%'}, right : {left : '100%'}, top : { top : '-100%'}, bottom : { top : '100%'} }
                 this.regExp &&
                 $node.show().css( effect == 'slide' ? 'left' : 'top', effect == 'slideDown' ? '-100%' : '100%' );
                 if ( !this.regExp ) {
@@ -149,7 +154,7 @@
                     to   = props['fadeIn'];
                 } else {
                     to = props['active'];
-                    
+
                     if ( idx > on ) {
                         from = props[effect == 'slide' ? 'right' : effect == 'slideUp' ? 'top' : 'bottom'];
                         $node.show().css(effect == 'slide' ? props['left'] : effect == 'slideUp' ? props['bottom'] : props['top']);

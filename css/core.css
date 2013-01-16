@@ -1,23 +1,49 @@
 * { margin: 0; padding: 0; }
-body { background: url(bgimg/bg-body.png); font: 12px/1.5 Arial; font-size:12px; }
+ul { list-style: none; }
+body { padding: 40px 0; background:#f5f5f5 url(bgimg/bg-body.png); font: 14px/1.5 consolas, \5FAE\8F6F\96C5\9ED1;}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10010;
+    height: 40px;
+    line-height: 40px;
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    color: #fff;
+}
+.navbar a { color: #fff; }
+.navbar .inner { overflow: hidden; }
+.navbar h1 { font-size: 18px; }
+.navbar .ver { font-size: 10px; }
+.navbar .nav { float: right; }
+.navbar .nav li { display: inline-block; *vertical-align: top; *zoom: 1; *display: inline; }
+.navbar .inner,
+.switches,
+.context {
+    width: 960px;
+    margin: 0 auto;
+}
 .switches {
     overflow: hidden;
 }
 .switch {
     position: relative;
-    float: left;
-    margin: 60px 0 0 80px;
-    width: 500px;
-    height: 300px;
+    width: 960px;
+    height: 240px;
+    margin-top: 20px;
 }
 .switch-in { position: relative;
     width: 100%; height:100%; overflow: hidden; }
-.item { float: left; width: 500px; height:300px; overflow: hidden;}
-.item img { display:block; width:500px; height:300px; }
+.item { float: left; width: 960px; height:240px; overflow: hidden;}
+.item img { display:block; width:960px; height:240px; }
 .non-css3 .item {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10000;
 }
 .fade > .item {
     position: absolute;
@@ -152,7 +178,7 @@ body { background: url(bgimg/bg-body.png); font: 12px/1.5 Arial; font-size:12px;
     margin-top: -20px;
     height: 30px;
     width: 30px;
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 20;
     line-height: 22px;
     background-color: #222222;
@@ -210,4 +236,14 @@ body { background: url(bgimg/bg-body.png); font: 12px/1.5 Arial; font-size:12px;
     background-color: #222222;
     opacity: .8;
     filter:alpha(opacity=80);
+}
+
+.context {
+   overflow: hidden;
+}
+.context .section {
+    margin-top: 20px;
+}
+code {
+    font-family: consolas, \5FAE\8F6F\96C5\9ED1 !important;
 }
