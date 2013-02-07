@@ -201,7 +201,7 @@
             }), $list = [], that = this;
 
             for ( var i = 1; i <= this.slides; i++ ) {
-                $list.push($('<a href="#"/>').text(this.conf.trigger || i));
+                $list.push($('<a href="#"/>').html(this.conf.trigger || i));
             }
 
             this.elem
